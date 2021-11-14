@@ -1,0 +1,22 @@
+---
+title: "Group 28 CA pollution burden"
+author: "Sarah Hamilton and Katherine Rosencrance"
+date: "11/14/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#Attach the necessary packages
+library(tidyverse)
+library(janitor)
+library(here)
+```
+
+```{r}
+#Read in the data and convert the column names to lower snake case using clean_names()
+ces <- read_csv(here("data","ces3demographics.csv")) %>%
+  clean_names()
+```
+
