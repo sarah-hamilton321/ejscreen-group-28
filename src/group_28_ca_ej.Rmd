@@ -23,8 +23,14 @@ ces <- read_csv(here("data","ces3demographics.csv")) %>%
 ggplot(data = ces, aes(x = white_percent, y = ces_3_0_score))+
   geom_hex()+
   labs(x = "% White", y = "CalEnviroScreen Pollution Burden Score",
-       caption = "Figure 1. CalEnviroScreen pollution burden score versus percentage of population that is white. \n The percentage of the population that is white is plotted on the x axis, with the CalEnviroScreen \n pollution burden score plotted on the y axis. The color indicates the count of census tracts that \n correspond to each point, with lighter shades of blue indicating higher counts of census tracts.")+
+       caption = "Figure 1. CalEnviroScreen pollution burden score versus percentage of population that is white. \n The percentage of the population that is white is plotted on the x axis, with the CalEnviroScreen \n pollution burden score plotted on the y axis. The color indicates the count of census tracts that \n correspond to each point, with darker shades of green indicating higher counts of census tracts.")+
   scale_fill_gradient(low = "darkseagreen1", high = "darkgreen")+
   theme_minimal()
 ```
 
+# Trends Observed
+**Figure 1** shows that there is a negative correlation between the percentage of white people in the population and CalEnviroScreen scores. This means that the lower the percentage of white people in a community, the higher the scores will be. High scores indicate an area with high pollution burden and a high number of characteristics in the population that may cause the pollution to be more deadly. 
+
+# Data Citation
+California Environmental Justice Alliance. 2018. CalEnviroScreen 3.0: A Tool for Advancing Environmental Justice. https://caleja.org/wp-content/uploads/2015/09/CES3.0-5.pdf (Accessed 11/11/2021)
+For more background and CalEnviroScreen 3.0 maps, go to: https://oehha.ca.gov/calenviroscreen/report/calenviroscreen-30
