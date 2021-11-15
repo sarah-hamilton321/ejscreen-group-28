@@ -5,8 +5,8 @@ date: "11/14/2021"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup, include=TRUE, warning = FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 
 #Attach the necessary packages
 library(tidyverse)
@@ -22,7 +22,8 @@ ces <- read_csv(here("data","ces3demographics.csv")) %>%
 ```{r}
 ggplot(data = ces, aes(x = white_percent, y = ces_3_0_score))+
   geom_hex()+
-  labs(x = "% White", y = "CalEnviroScreen Pollution Burden Score")+
+  labs(x = "% White", y = "CalEnviroScreen Pollution Burden Score",
+       caption = "Figure 1. CalEnviroScreen pollution burden score versus percentage of population that is white. \n The percentage of the population that is white is plotted on the x axis, with the CalEnviroScreen \n pollution burden score plotted on the y axis. The color indicates the count of census tracts that \n correspond to each point, with lighter shades of blue indicating higher counts of census tracts.")+
   scale_fill_gradient(low = "darkseagreen1", high = "darkgreen")+
   theme_minimal()
 ```
